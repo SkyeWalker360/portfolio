@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luke Gorry: Portfolio</title>
+  <meta name="description" content="Luke Gorry, full-stack developer in South Africa. A self-run NixOS homelab and a 16-bit space CV site.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="wrap">
+    <p class="kicker">Luke Gorry · Gauteng, South Africa</p>
+    <h1>I build and run software, and I like it to be checkable.</h1>
+    <p class="lede">Full-stack developer with a certified NDT inspection background. Available for remote work in AI evaluation, freelance development and automation, and tutoring.</p>
+    <nav aria-label="Links">
+      <a href="https://skyewalker360.github.io/my-three-body-cv/">CV site</a>
+      <a href="https://github.com/SkyeWalker360">GitHub</a>
+      <a href="https://www.linkedin.com/in/luke-gorry-951502239">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="work">
+      <h2 id="work">Selected projects</h2>
+
+      <article class="card">
+        <h3>Three-tower homelab</h3>
+        <p class="tags">NixOS · Nix flakes · Tailscale · sops-nix · restic · Ollama</p>
+        <p>A small lab of two desktops, a Proxmox host, a backup box and an always-on VM, all described in one Nix flake. Every machine can be rebuilt from git, and every change is built and checked before I switch to it.</p>
+        <ul>
+          <li><strong>Safe deploys:</strong> deploy-rs with magic rollback. I tested it by deliberately breaking SSH and watching it undo the change.</li>
+          <li><strong>One list of ports:</strong> a registry that opens firewall ports only on the private network, and fails the build if two services claim the same port.</li>
+          <li><strong>Backups that can't be erased:</strong> nightly restic to an append-only server, with heartbeats that alert my phone when a backup goes missing.</li>
+          <li><strong>Files that clean themselves:</strong> a sorter with a 30-day quarantine instead of deletion, and one command to undo a day.</li>
+          <li><strong>Local AI on a budget:</strong> a 20B model on a 16 GB GPU that steps aside when I game, plus private search and a research tool that stays on the private network.</li>
+          <li><strong>Agents with guardrails:</strong> coding agents run under enforced deny lists (no pushes, no deploys, no secrets), because instructions alone were not enough.</li>
+        </ul>
+        <p class="note">The repository is private because it holds infrastructure details. I'm happy to walk through it on a call.</p>
+      </article>
+
+      <article class="card">
+        <h3>My Three Body CV</h3>
+        <p class="tags">Next.js · React 19 · TypeScript · Tailwind · XState · Playwright</p>
+        <p>My CV as a 16-bit space site. The CV itself is plain, recruiter-friendly HTML. Behind it sits a live three-body physics simulation running in a Web Worker, and a few hidden extras for people who look around.</p>
+        <ul>
+          <li><strong>One source of truth:</strong> the CV lives in a validated JSON file, and the page, the PDF and the site's built-in assistant are all generated from it.</li>
+          <li><strong>Accessible and fast:</strong> automated accessibility and end-to-end tests run in CI. Lighthouse performance was 98 on mobile and 100 on desktop (measured 27 October 2026).</li>
+          <li><strong>Static and cheap:</strong> a static export deployed to GitHub Pages by CI on every merge.</li>
+        </ul>
+        <p><a href="https://skyewalker360.github.io/my-three-body-cv/">Open the site</a> · <a href="https://github.com/SkyeWalker360/my-three-body-cv">Source code</a></p>
+      </article>
+    </section>
+
+    <section aria-labelledby="how">
+      <h2 id="how">How I work</h2>
+      <ul>
+        <li>Plan first, then build one small piece at a time, and check it before moving on.</li>
+        <li>Prefer tests, build checks and written rules over remembering things.</li>
+        <li>Keep secrets out of code and out of chat, and say plainly when something fails.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>Get in touch through the <a href="https://skyewalker360.github.io/my-three-body-cv/">CV site</a> or <a href="https://www.linkedin.com/in/luke-gorry-951502239">LinkedIn</a>.</p>
+  </footer>
+</body>
+</html>
